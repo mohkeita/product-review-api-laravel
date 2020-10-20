@@ -11,6 +11,20 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * Get the products the user has added.
+     */
+    public function products() {
+        return $this->hasMany('App\Product');
+    }
+
+    /**
+     * Get the reviews the user has made.
+     */
+    public function reviews() {
+        return $this->hasMany('App\Review');
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
